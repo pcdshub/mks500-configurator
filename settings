@@ -1,0 +1,47 @@
+IGEXT NA Get or set the cold cathode ion gauge external over pressure configuration.    
+IGINT NA Get or set the internal cold cathode ion gauge over pressure configuration.    
+IGT NA Get or set the cold cathode ion gauge turn ON timeout.     
+LIFE NA Get or set the vacuum environm          
+LOCK NA Get or set communication command lock.          
+LOG NA Get or set system log.           
+RCC NA Read the calibration curve data.           
+##RD NA Read the current value of an output or input.       
+#RDZ NA Read the anode voltage, di           
+##RLYx NA Get or set the relay manually ON or OFF.       
+##RLYSPx NA Get or set the relay set point configuration.        
+#RLYDIN NA Get or set the digital input trigger configuration to disable the relay set   
+##RST NA Reset the controller.             
+RU NA Read units of pressure.            
+SA NA Get or set the RS-485 address.          
+SB NA Get or set the baud rate.          
+SENSOR NA Get or set the sensor serial number and reset the sensor VTRAC stat.   
+SF NA Get or set the sensitivity factor.          
+SN NA Get the serial number.            
+SP NA Get or set the parity and data bits.        
+SPLASH NA Show startup configuration information on the display.         
+STAMP NA Get or set the date and time stamping of every command response.    
+#SU NA Set the units of pressure.           
+#SYSDFU NA Force the unit to enter Device Firmware Update (DFU) mode.      
+#SYSINFO NA Get all of the embedded information from the unit.       
+TEMP NA Get the cu             
+TIME NA Get and set the date and time.         
+UPTIME NA Read the total Power ON Hours since the last power cycle or RST command.  
+VER NA Read FW version number               
+VTRAC NA Get the VacTrac statistics from the controller.         
+AO NA Get or set the analog output mode.         
+BL NA Set the gauge button lock or get the button lock state.     
+CC NA Get or set the calibration curve.          
+CCID NA Get or set the calibration curve ID string.        
+CFM NA Get or set the pressure correction factor multiplier.        
+DAR NA Get or set the display auto reset period.        
+DOSE NA Get the current dose value in Coulombs for the installed gauge.     
+#DT NA Run the diagnostic test commands.           
+#DTDIN NA Get or set the digital input trigger configuration for diagnostic test.     
+#DTPOST NA Turns POST ON or OFF.           
+#FAC NA Reset all\scontroller settings back to factory defaults.        
+GTM NA Get or set the gas type multiplier.         
+#HELP NA Get all the supported user commands.          
+#IG NA Get or set the cold cathode ion gauge ON or OFF.     
+IGAIN NA Get or set the cold cathode ion gauge configuration for Analog Input.    
+IGAUTO NA Get or set the cold cathode ion gauge auto ON/OFF configuration.     
+IGDIN NA Get or set the cold cathode ion gauge auto ON / OFF configuration for Digital Input.
