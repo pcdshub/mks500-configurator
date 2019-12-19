@@ -5,7 +5,7 @@ import time
 
 serialNumberCommand = 'SN'
 
-
+timestamp = time.strftime("%Y%m%d-%H%M%S")
 
 def rw(sio, command, argument=''):
     if argument == '' or argument == 'NA':
@@ -30,7 +30,7 @@ def runCommands(sio, executeDict, writeSettings=0):
         currentConfig[command] = {'helptext':executeDict[command]['helptext'],'value':value}
 
     # Record current settings
-    filename = currentConfig[serialNumberCommand]['value'].strip('* \r')+whichFile[writeSettings]+time.strftime("%Y%m%d-%H%M%S")
+    filename = currentConfig[serialNumberCommand]['value'].strip('* \r')+whichFile[writeSettings]+timestamp
     with open(filename, 'w') as currentFile:
         json.dump(currentConfig, currentFile, indent=1)
 

@@ -44,4 +44,4 @@ GTM NA Get or set the gas type multiplier.
 #IG NA Get or set the cold cathode ion gauge ON or OFF.     
 IGAIN NA Get or set the cold cathode ion gauge configuration for Analog Input.    
 IGAUTO NA Get or set the cold cathode ion gauge auto ON/OFF configuration.     
-IGDIN NA Get or set the cold cathode ion gauge auto ON / OFF configuration for Digital Input.
+IGDIN LOW,0 Get or set the cold cathode ion gauge auto ON / OFF configuration for Digital Input.
