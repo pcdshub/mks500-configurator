@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['configurator.py'],
+a = Analysis(['mks500_configurator.py'],
              pathex=['C:\\Users\\awallace\\Documents\\Source\\mks-500-configurator'],
              binaries=[],
              datas=[('settings.cfg','.')],
