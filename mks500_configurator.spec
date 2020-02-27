@@ -1,12 +1,12 @@
-# -*- mode: python -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
-a = Analysis(['configurator.py'],
+a = Analysis(['mks500_configurator.py'],
              pathex=['C:\\Users\\awallace\\Documents\\Source\\mks-500-configurator'],
              binaries=[],
-             datas=[],
+             datas=[('settings.cfg','.')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -28,5 +28,6 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
+          upx_exclude=[],
           runtime_tmpdir=None,
           console=True )
