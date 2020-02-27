@@ -1,11 +1,29 @@
-import serial
 import io
+import os
+import sys
 import json
 import time
+
+from serial.tools import list_ports
+import serial
 
 serialNumberCommand = 'SN'
 
 timestamp = time.strftime("%Y%m%d-%H%M%S")
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+        print(base_path)
+    except Exception:
+        print(sys._MEIPASS)
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 def rw(sio, command, argument=''):
     if argument == '' or argument == 'NA':
@@ -37,13 +55,20 @@ def runCommands(sio, executeDict, writeSettings=0):
 
 if __name__ == "__main__":
     # Open serial interface
-    ser = serial.Serial("COM4", timeout=1)
+    valid_ports = list_ports.grep("SER=500")
+    try:
+        port = next(valid_ports)
+    except StopIteration:
+        print('No device found')
+        print('Enter to close')
+        input()
+        exit()
+
+    ser = serial.Serial(port.device, timeout=1)
     sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser), newline='\r')
     try:
-        
-
-        # Import config settings
-        f = open("settings")
+        print('Import config settings')
+        f = open(resource_path("settings.cfg"))
         executeDict = {}
         for line in f:
             if line[0] == '#':
@@ -53,14 +78,15 @@ if __name__ == "__main__":
 
             executeDict[comarg[0]] = {'argument':comarg[1], 'helptext':comarg[2]}
 
-        
-        # Retrieve all current settings
+        print('Retrieve all current settings')
         runCommands(sio, executeDict, 0)
 
-        # Apply new config settings
+        print('Apply new config settings')
         runCommands(sio, executeDict, 1)
 
-        # Record new settings   
+        print('Record new settings')
         runCommands(sio, executeDict, 2)
     finally:
         ser.close()
+        print('Enter to close')
+        input()
