@@ -7,4 +7,3 @@ Configuration script for the MKS 500 Cold Cathode Vacuum Gauge
 
 To use:
 - Edit the settings file. Change NA to the value you want programmed.
-- Executable must be in the same directory as the settings file.
