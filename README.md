@@ -10,3 +10,8 @@ Just plug the gauge electronics into your Windows laptop with a USB micro cable 
 
 To change settings:
 - Edit the settings.cfg file. Change NA to the value you want programmed.
+
+To build the exe
+- install pyinstaller
+- run 'pyinstaller mks500_configurator.spec'
+- .exe will be available under ./dist
